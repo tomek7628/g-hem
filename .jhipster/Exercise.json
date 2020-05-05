@@ -1,0 +1,56 @@
+{
+    "name": "Exercise",
+    "fields": [
+        {
+            "fieldName": "bodyPart",
+            "fieldType": "BodyPart",
+            "fieldValues": "CHEST,BACK,BICEPS,TRICEPS,GLUTES,LEGS,ABS"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "series",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "weight",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "modified",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "position",
+            "otherEntityRelationshipName": "exercise",
+            "relationshipName": "position"
+        }
+    ],
+    "changelogDate": "20200505150300",
+    "entityTableName": "exercise",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="exercise">
+            <h2><span jhiTranslate="ghemApp.exercise.detail.title">Exercise</span> {{ exercise.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ghemApp.exercise.bodyPart">Body Part</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'ghemApp.BodyPart.' + exercise.bodyPart }}">{{ exercise.bodyPart }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.exercise.name">Name</span></dt>
+                <dd>
+                    <span>{{ exercise.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.exercise.series">Series</span></dt>
+                <dd>
+                    <span>{{ exercise.series }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.exercise.weight">Weight</span></dt>
+                <dd>
+                    <span>{{ exercise.weight }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.exercise.modified">Modified</span></dt>
+                <dd>
+                    <span>{{ exercise.modified }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/exercise', exercise.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
