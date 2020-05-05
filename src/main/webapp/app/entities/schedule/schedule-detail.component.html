@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="schedule">
+            <h2><span jhiTranslate="ghemApp.schedule.detail.title">Schedule</span> {{ schedule.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ghemApp.schedule.name">Name</span></dt>
+                <dd>
+                    <span>{{ schedule.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.schedule.dayOfWeek">Day Of Week</span></dt>
+                <dd>
+                    <span>{{ schedule.dayOfWeek }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.schedule.created">Created</span></dt>
+                <dd>
+                    <span>{{ schedule.created }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.schedule.modified">Modified</span></dt>
+                <dd>
+                    <span>{{ schedule.modified }}</span>
+                </dd>
+                <dt><span jhiTranslate="ghemApp.schedule.archival">Archival</span></dt>
+                <dd>
+                    <span>{{ schedule.archival }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/schedule', schedule.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

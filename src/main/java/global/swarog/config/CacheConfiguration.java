@@ -40,6 +40,11 @@ public class CacheConfiguration {
             createCache(cm, global.swarog.domain.User.class.getName());
             createCache(cm, global.swarog.domain.Authority.class.getName());
             createCache(cm, global.swarog.domain.User.class.getName() + ".authorities");
+            createCache(cm, global.swarog.domain.Schedule.class.getName());
+            createCache(cm, global.swarog.domain.Schedule.class.getName() + ".positions");
+            createCache(cm, global.swarog.domain.Position.class.getName());
+            createCache(cm, global.swarog.domain.Exercise.class.getName());
+            createCache(cm, global.swarog.domain.Exercise.class.getName() + ".positions");
             // jhipster-needle-ehcache-add-entry
         };
     }

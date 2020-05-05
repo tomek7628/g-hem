@@ -1,0 +1,36 @@
+enum BodyPart {
+    CHEST, BACK, BICEPS, TRICEPS, GLUTES, LEGS, ABS
+  }
+
+entity Schedule {	
+	name String required maxlength(50)    
+    dayOfWeek Integer
+    created LocalDate
+    modified LocalDate
+    archival Boolean
+}
+
+entity Position {
+	position Integer required    
+}
+
+entity Exercise {
+	bodyPart BodyPart
+	name String required maxlength(50)
+    series Integer required
+    weight Float required
+    modified LocalDate
+}
+
+relationship OneToMany {
+	Schedule{position} to Position{schedule},
+	Exercise{position} to Position{exercise}
+}
+
+// Set pagination options
+paginate Schedule, Exercise with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Position

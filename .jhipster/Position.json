@@ -1,0 +1,39 @@
+{
+    "name": "Position",
+    "fields": [
+        {
+            "fieldName": "position",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "schedule",
+            "otherEntityRelationshipName": "position",
+            "relationshipName": "schedule",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "exercise",
+            "otherEntityRelationshipName": "position",
+            "relationshipName": "exercise",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200505150200",
+    "entityTableName": "position",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,49 @@
+{
+    "name": "Schedule",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "dayOfWeek",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "created",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "modified",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "archival",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "position",
+            "otherEntityRelationshipName": "schedule",
+            "relationshipName": "position"
+        }
+    ],
+    "changelogDate": "20200505150100",
+    "entityTableName": "schedule",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
